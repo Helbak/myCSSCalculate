@@ -69,7 +69,12 @@ describe(" test CAlculator", () => {
         const exp = 16;
         assert.deepEqual(act, exp);
     });
-
+    it(`AllNull`, function () {
+        setNum1(222);
+        const act = allNull();
+        const exp = '';
+        assert.deepEqual(act, exp);
+    });
 
 
 });
