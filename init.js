@@ -92,9 +92,7 @@ function writeDot() {
 function writeSign() {
     let type = this.getAttribute('data-type');
     if (num1.length <= 7) {
-
         num1 = num1 + type;
-
     }
     toScreen(num1);
     return num1;
@@ -109,12 +107,21 @@ function saveOldNum() {
 
 function writeFunction() {
     let type = this.getAttribute('data-type');
+    if( type === 'doMinus' && num1===''){
+        console.log('  if( type === \'minus\' && num1===\'\')');
+       writeMinus();
+       return num1;
+    }
     saveOldNum();
     toScreen('');
     action = type;
     dot.disabled = false;
+    return action;
 };
-
+function writeMinus() {
+    num1 = num1 + '-';
+    toScreen(num1);
+}
 function getResult() {
        let act = action;
     switch (act) {
