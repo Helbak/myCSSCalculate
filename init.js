@@ -3,21 +3,26 @@ let oldNum;
 let result = 0;
 let num = '';
 let action;
+
 function setNum1(n) {
-    num1=n;
+    num1 = n;
     return num1;
 };
+
 function setOldNum(n) {
-    oldNum=n;
+    oldNum = n;
     return oldNum;
 };
+
 function setResult(n) {
-    result=n;
+    result = n;
     return result;
 };
+
 function getAction() {
     return action;
 };
+
 function setAction(a) {
     action = a;
     return action;
@@ -83,12 +88,14 @@ function ce() {
     toScreen(num1);
     return num1;
 };
+
 function writeDot() {
-    num1=num1+'.';
+    num1 = num1 + '.';
     dot.disabled = true;
     toScreen(num1);
     return num1;
 }
+
 function writeSign() {
     let type = this.getAttribute('data-type');
     if (num1.length <= 7) {
@@ -107,10 +114,9 @@ function saveOldNum() {
 
 function writeFunction() {
     let type = this.getAttribute('data-type');
-    if( type === 'doMinus' && num1===''){
-        console.log('  if( type === \'minus\' && num1===\'\')');
-       writeMinus();
-       return num1;
+    if (type === 'doMinus' && num1 === '') {
+        writeMinus();
+        return num1;
     }
     saveOldNum();
     toScreen('');
@@ -118,12 +124,15 @@ function writeFunction() {
     dot.disabled = false;
     return action;
 };
+
 function writeMinus() {
     num1 = num1 + '-';
     toScreen(num1);
+    return num1;
 }
+
 function getResult() {
-       let act = action;
+    let act = action;
     switch (act) {
 
         case 'doPlus' :
@@ -139,7 +148,7 @@ function getResult() {
             result = oldNum * parseFloat(num1);
             break;
     }
-     num1 = result;
+    num1 = result;
     toScreen(num1);
     return num1;
 };

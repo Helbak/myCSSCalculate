@@ -45,6 +45,16 @@ describe(" test CAlculator", () => {
         const exp = 10;
         assert.deepEqual(act, exp);
     });
+    it(`getResult()  -8 doPlus 0.2`, function () {
+        setOldNum(-8);
+        setNum1(".2");
+        setAction('doPlus');
+        const act = getResult();
+        const exp = -7.8;
+        assert.deepEqual(act, exp);
+    });
+
+
     it(`getResult()  8 doMinus 2`, function () {
         setOldNum(8);
         setNum1("2");
@@ -69,14 +79,28 @@ describe(" test CAlculator", () => {
         const exp = 16;
         assert.deepEqual(act, exp);
     });
+    it(`writeMinus()`, function () {
+        allNull();
+        const act = writeMinus();
+        const exp = '-';
+        assert.deepEqual(act, exp);
+    });
+    it(`writeDot()`, function () {
+        allNull();
+        const act = writeDot();
+        const exp = '.';
+        assert.deepEqual(act, exp);
+    });
+
+
+
+
     it(`AllNull`, function () {
         setNum1(222);
         const act = allNull();
         const exp = '';
         assert.deepEqual(act, exp);
     });
-
-
 });
 
 //
